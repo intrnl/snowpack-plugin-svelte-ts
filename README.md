@@ -8,15 +8,14 @@ This adds TypeScript preprocessing to Svelte components in a worker pool,
 which can't be done in a regular preprocessor plugin since it needs a lifecycle
 hook to stop the workers when the build is finished.
 
-It wouldn't be as fast as ESBuild, but until it provides an option to only
-remove type imports since we don't actually know what bindings are used ahead
-of time, this is the only best option we have right now.
-
 What's next is to make sure you only use regular imports for normal exported
 members and use [type-only imports][1] for types and interfaces.
 
-Note that the speed improvements might not be drastic for smaller components so
-you might be better off using [svelte-preprocess][2] instead.
+It wouldn't be as fast as ESBuild, but until it provides an option to only
+remove type imports since we don't actually know what bindings are used ahead
+of time, this is the only best option we have right now. Note that the speed
+improvements might not be drastic for smaller components so you might be better
+off using [svelte-preprocess][2] instead.
 
 > Technically, it *is* possible for us to try and see what bindings are used and
 > then try to work around that, but that requires manually parsing the component
@@ -58,7 +57,7 @@ import it manually.
   File extensions to process, defaults to only processing `.svelte` files
 - `maxWorkers?: number`  
   The maximum amount of workers to spawn, defaults to your CPU cores minus 1
-- `typescript?: boolean`
+- `typescript?: boolean`  
   Whether TypeScript preprocessing is enabled, defaults to `true`
 - `preprocess?: PreprocessorGroup | PreprocessorGroup[]`  
   A preprocessor or an array of preprocessors, this runs before the builtin
