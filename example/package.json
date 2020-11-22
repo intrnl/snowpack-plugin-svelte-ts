@@ -1,0 +1,10 @@
+{
+	"dependencies": {
+		"svelte": "^3.29.7"
+	},
+	"devDependencies": {
+		"@intrnl/snowpack-plugin-svelte-ts": "link:../",
+		"snowpack": "^2.17.1",
+		"typescript": "^4.1.2"
+	}
+}
