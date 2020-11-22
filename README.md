@@ -27,8 +27,8 @@ off using [svelte-preprocess][2] instead.
 
 ## Usage
 
-> It's not published to npm yet due to above, but you can try it by installing
-> `@intrnl/snowpack-plugin-svelte-ts@github:intrnl/snowpack-plugin-svelte-ts`
+> It's not published to npm yet due to above, so you need to clone this
+> repository and build it on your own.
 
 ```sh
 npm install --save-dev @intrnl/snowpack-plugin-svelte-ts
