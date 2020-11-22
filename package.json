@@ -17,7 +17,7 @@
 	"scripts": {
 		"build": "pnpm run build:lib",
 		"build:lib": "bundl",
-		"prepublishOnly": "pnpm run build"
+		"prepare": "pnpm run build"
 	},
 	"peerDependencies": {
 		"snowpack": "^2.7.0",
