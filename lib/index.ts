@@ -21,7 +21,7 @@ function plugin (snowpackConfig: SnowpackConfig, pluginOptions: PluginOptions = 
 		hmrOptions,
 	} = pluginOptions;
 
-	let sourcemap = snowpackConfig.buildOptions.sourceMaps;
+	let useSourcemap = snowpackConfig.buildOptions.sourceMaps;
 
 	let pool = new WorkerPool<PluginWorker>(workerScript, { max: numWorkers });
 
@@ -53,7 +53,7 @@ function plugin (snowpackConfig: SnowpackConfig, pluginOptions: PluginOptions = 
 				compilerOptions,
 				hmrOptions,
 				typescript,
-				sourcemap,
+				useSourcemap,
 				isDev,
 				isHmrEnabled,
 				isSSR,

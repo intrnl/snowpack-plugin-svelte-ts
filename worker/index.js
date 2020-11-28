@@ -18,7 +18,7 @@ module.exports = {
 			compilerOptions = {},
 			hmrOptions = {},
 			typescript = true,
-			sourcemap = false,
+			useSourcemap = false,
 			isDev = false,
 			isHmrEnabled = false,
 			isSSR = false,
@@ -62,11 +62,11 @@ module.exports = {
 
 
 		let output = {
-			'.js': { code: js.code, map: sourcemap && js.map || null },
+			'.js': { code: js.code, map: useSourcemap && js.map || null },
 		};
 
 		if (!finalCompileOptions.css && css && css.code) {
-			output['.css'] = { code: css.code, map: sourcemap && css.map || null };
+			output['.css'] = { code: css.code, map: useSourcemap && css.map || null };
 		}
 
 		return output;

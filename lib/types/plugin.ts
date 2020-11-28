@@ -10,7 +10,7 @@ export interface WorkerCompileOptions {
 	compilerOptions?: CompileOptions,
 	hmrOptions?: HMROptions,
 	typescript?: boolean,
-	sourcemap?: boolean,
+	useSourcemap?: boolean,
 	isDev?: boolean,
 	isHmrEnabled?: boolean,
 	isSSR?: boolean,
