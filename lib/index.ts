@@ -21,9 +21,16 @@ function plugin (snowpackConfig: SnowpackConfig, pluginOptions: PluginOptions = 
 		hmrOptions,
 	} = pluginOptions;
 
+	let pool = new WorkerPool<PluginWorker>(workerScript, { max: numWorkers });
+
+	let isDev = process.env.NODE_ENV !== 'production';
 	let useSourcemap = snowpackConfig.buildOptions.sourceMaps;
 
-	let pool = new WorkerPool<PluginWorker>(workerScript, { max: numWorkers });
+	let { installOptions } = snowpackConfig;
+	installOptions.packageLookupFields!.push('svelte');
+	installOptions.rollup!.plugins!.push(
+		svelteRollupPlugin({ include: '**/node_modules/**', dev: isDev })
+	);
 
 	return {
 		name: 'snowpack-plugin-svelte-ts',
@@ -72,3 +79,9 @@ function plugin (snowpackConfig: SnowpackConfig, pluginOptions: PluginOptions = 
 }
 
 export default plugin;
+
+declare module 'rollup-plugin-svelte' {
+	interface Options {
+		dev?: boolean
+	}
+}
