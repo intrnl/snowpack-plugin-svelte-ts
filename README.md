@@ -1,5 +1,7 @@
 # snowpack-plugin-svelte-ts
 
+> Deprecated. [ESBuild no longer removes unused imports][6]
+
 Experimental Snowpack plugin for using Svelte components within your app
 
 ## What's different?
@@ -74,3 +76,4 @@ import it manually.
 [3]: https://svelte.dev/docs#svelte_compile
 [4]: https://github.com/rixo/svelte-hmr#options
 [5]: https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-babel
+[6]: https://github.com/evanw/esbuild/issues/604#issuecomment-752882156
